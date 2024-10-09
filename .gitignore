@@ -213,7 +213,6 @@ cda-graphics-v2.virtual.de.json
 cda-graphics-v2.virtual.en.json
 compiled-assets/
 compiled-content/
-docs/
 rsync.sh
 rsync-live.sh
 rsync-preview.sh
