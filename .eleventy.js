@@ -22,7 +22,7 @@ const config = {
   "generateArchivals": true,
   "generateGraphicsVirtualObjects": true,
   "pathPrefix": {
-    "external": "cranach-canvas",
+    "external": "canvas-demo",
     "internal": "intern/map",
     "development": ""
   },
