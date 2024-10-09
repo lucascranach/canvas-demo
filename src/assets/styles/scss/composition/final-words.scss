@@ -1,0 +1,33 @@
+// Finale Words
+// --------------------------------------------------------------------------
+
+.final-words {
+  padding:
+    var(--responsive-padding-top)
+    var(--responsive-padding-right-left)
+    0
+    var(--responsive-padding-right-left);
+  background-color: $light;
+
+  .block,
+  .foldable-block {
+    background-color: $light;
+
+    .is-expand-trigger::after{
+      position: relative;
+      display: inline-flex;
+      margin-left: $m;
+      background-color: $lighten-strong;
+    }
+  }
+
+  @media only screen and (min-width: $vp-xlarge) {
+    display: grid;
+    gap: var(--responsive-gap);
+    grid-template-columns: 1fr $column-medium;
+  }
+
+  @media only screen and (min-width: $vp-xxlarge) {
+    grid-template-columns: 1fr $column-large;
+  }
+}

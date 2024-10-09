@@ -1,0 +1,125 @@
+.has-interaction {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-link::after{
+  @include external-link;
+}
+
+.is-remark {
+  color: $darken-strong;
+}
+
+.is-cut {
+  overflow: hidden;
+  height: 0;
+}
+
+.is-visible {
+  display: block;
+  opacity: 1;
+}
+
+.is-stupid-link{
+  border-bottom: solid $border-stroke-weight-s $accent;
+}
+
+.is-less-important {
+  opacity: $op-medium;
+}
+
+.is-download-link {
+  display: inline-block;
+  transition: background $tr-fast, padding $tr-fast;
+
+  &:hover {
+    padding-right: $quad;
+    padding-left: $quad;
+    background-color: $accent;
+  }
+}
+
+.has-separator {
+  &::before {
+    display: block;
+    width: $xl;
+    border-top: solid $border-stroke-weight $accent-dark;
+    margin-top: $xs;
+    margin-bottom: $xs;
+    content: " ";
+  }
+}
+
+.has-tight-separator {
+  &::before {
+    display: block;
+    width: $xl;
+    border-top: solid $border-stroke-weight $accent-dark;
+    margin-bottom: $s;
+    content: " ";
+  }
+}
+
+.has-tight-bottom-separator {
+  &::after {
+    display: block;
+    width: $xl;
+    border-top: solid $border-stroke-weight $accent-dark;
+    margin-top: $s;
+    content: " ";
+  }
+}
+
+.has-small-separator {
+  &::before {
+    display: block;
+    width: $xl;
+    border-top: solid $border-stroke-weight-s $darken-strong;
+    margin-top: $quad;
+    margin-bottom: $xs;
+    content: " ";
+  }
+}
+
+.is-identifier {
+  display: inline;
+  font-weight: $fw-semibold;
+
+  &::after {
+    display: inline-block;
+    padding-right: $quad;
+    content: ":";
+  }
+}
+
+.is-clipable-content {
+
+  &::after {
+    display: inline-block;
+    padding-right: $quad;
+    padding-left: $quad;
+    margin-left: $quad;
+    color: $accent-dark;
+    content: "content_paste";
+    font-family: $font-icons;
+    opacity: $op-medium;
+    transform-origin: center;
+    transition: all $tr-fast;
+    vertical-align: bottom;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      opacity: 1;
+      transform: rotate(5deg);
+    }
+  }
+}

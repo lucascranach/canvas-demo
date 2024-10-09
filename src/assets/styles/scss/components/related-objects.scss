@@ -1,0 +1,59 @@
+// Related Item
+//-----------------------------------------------------------------------------
+
+.related-item-wrap {
+  margin: $m 0;
+}
+
+.related-item {
+  display: flex;
+  margin: 0;
+  gap: var(--responsive-gap);
+  transition: background-color $tr-fast;
+
+  &:hover {
+    background-color: $accent;
+    cursor: pointer;
+
+    ul {
+      margin-top: $xs;
+      margin-bottom: $xs;
+    }
+  }
+
+  &__image {
+    width: $tile-xxs;
+    height: $tile-xxs;
+    aspect-ratio: 1/1;
+    background-color: $darken-medium;
+    transition: transform $tr-fast;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    margin-top: -$quad;
+    margin-bottom: 0;
+    font-weight: $fw-regular;
+    transition: margin $tr-fast;
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__id {
+    margin-bottom: 0;
+  }
+
+  &__caption {
+    line-height: 0;
+  }
+
+
+}

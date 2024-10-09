@@ -1,0 +1,33 @@
+// Leporello Reprints
+// --------------------------------------------------------------------------
+
+.leporello-reprints {
+  flex-grow: 999;
+  padding:
+    var(--responsive-padding-top-inner)
+    var(--responsive-padding-right-left)
+    var(--responsive-padding-bottom)
+    var(--responsive-padding-right-left);
+  border-top: solid $border-stroke-weight-s $light;
+  background-color: $lighter;
+
+  transition: margin $tr-medium, opacity $tr-fast $tr-fast;
+
+  &__headline{
+    padding-bottom: var(--responsive-padding-bottom-inner);
+    color: $darken-strong;
+    font-size: $xl;
+    font-weight: $fw-light;
+
+    @media only screen and (min-width: $vp-medium) {
+      padding-left: $tile-xs;
+      margin-left: var(--responsive-gap);
+    }
+  }
+
+  &.go-deeper {
+    margin-left: -100vw;
+    opacity: 0;
+  }
+
+}

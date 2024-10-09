@@ -1,0 +1,65 @@
+.survey {
+  padding-bottom: $m;
+
+  &-title {
+    padding-right: $xl;
+    margin-top: 0;
+    margin-bottom: $quad;
+    font-weight: $fw-semibold;
+    line-height: $lh-normal;
+  }
+
+  &-keywords {
+    padding-right: $xl;
+    margin-bottom: $l;
+    color: $dark;
+    font-weight: $fw-regular;
+
+    & > li {
+      display: inline;
+    }
+
+    li + li::before {
+      display: inline-block;
+      padding-right: $quad;
+      content: ",";
+    }
+  }
+
+  &-persons {
+    position: relative;
+    padding-top: $xs;
+    padding-right: $xl;
+    border-top: dotted $border-stroke-weight $darken-medium;
+    margin-top: $m;
+    color: $darken-strong;
+    font-weight: $fw-regular;
+
+    & > li {
+      margin-bottom: 0;
+      margin-left: $xxl;
+    }
+
+    &::before {
+      position: absolute;
+      top: $s;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $darken-strong;
+      content: "people";
+      font-family: $font-icons;
+      font-size: $l;
+    }
+  }
+
+  &-kind {
+    font-weight: $fw-regular;
+  }
+
+  &-content{
+    padding-right: $xl;
+  }
+}

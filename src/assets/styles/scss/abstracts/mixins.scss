@@ -1,0 +1,94 @@
+@mixin overlay($height, $color) {
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background: linear-gradient(180deg, rgba($color, 0), $color 100%);
+    content: '';
+  }
+}
+
+@mixin base-grid {
+  display: grid;
+  column-gap: var(--responsive-gap);
+  grid-auto-rows: 1fr;
+  row-gap: var(--responsive-gap);
+}
+
+@mixin grid-even-2-columns($viewport) {
+  @media only screen and (min-width: #{$viewport}) {
+    @include base-grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@mixin grid-uneven-2-columns($viewport) {
+  @media only screen and (min-width: #{$viewport}) {
+    @include base-grid;
+
+    grid-template-columns: 342px 1fr;
+  }
+}
+
+@mixin grid-even-3-columns($viewport) {
+  @media only screen and (min-width: #{$viewport}) {
+    @include base-grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@mixin grid-even-columns($viewport, $columns) {
+  @media only screen and (min-width: #{$viewport}) {
+    @include base-grid;
+
+    grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+}
+
+@mixin small-separator() {
+  &::before {
+    display: block;
+    width: 1.3rem;
+    border-top: solid $border-stroke-weight rgba(0, 0, 0, $op-low);
+    margin-top: 0.25rem;
+    margin-bottom: 0.7rem;
+    content: " ";
+  }
+}
+
+@mixin external-link() {
+  display: inline-block;
+  margin-left: $quad;
+  color: $accent-dark;
+  content: "link";
+  font-family: $font-icons;
+  vertical-align: bottom;
+}
+
+@mixin compare-collection() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: $xxs $xs;
+  background-color: $darken-strong;
+  border-radius: $radius-s;
+  color: $accent;
+  font-family: $font-icons;
+  font-size: $l;
+  vertical-align: bottom;
+}
+
+@mixin compare-launcher() {
+  display: block;
+  padding-right: $xs;
+  color: $darkest;
+  content: "compare";
+  font-family: $font-icons;
+  font-size: $l;
+}
+

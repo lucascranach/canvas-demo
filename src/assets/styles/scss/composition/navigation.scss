@@ -1,0 +1,218 @@
+// Main Navigation
+// --------------------------------------------------------------------------
+
+.main-navigation {
+  position: sticky;
+  z-index: $level-overall-nav;
+  top: 0;
+  display: grid;
+  padding:
+    0
+    var(--responsive-padding-right-left)
+    0
+    var(--responsive-padding-right-left);
+  margin:
+    var(--responsive-padding-top-inner)
+    0
+    var(--responsive-padding-bottom-inner)
+    0;
+  background-color: $lightest;
+  gap: var(--responsive-gap);
+  grid-template-columns: max-content 1fr;
+  transition: padding $tr-fast;
+
+  &.is-loose {
+    padding-top: var(--responsive-padding-top);
+    padding-bottom: var(--responsive-padding-top);
+  }
+
+  &.is-sticky{
+    position: sticky;
+  }
+
+  &.is-reduced{
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: $shadow-xs;
+  }
+
+  & > h2 {
+    margin: 0;
+    color: $darken-strong;
+    font-size: $xl;
+    font-weight: $fw-light;
+  }
+
+  & > .button{
+    padding-right: $xl;
+    padding-left:0;
+  }
+}
+
+
+// Logo
+// --------------------------------------------------------------------------
+
+.cda-logo-wrap{
+  width: $tile-xs;
+  padding: 0;
+  margin-right: -3px;
+}
+
+.cda-logo {
+  height: $xl;
+  opacity: 0.3;
+
+  &:hover{
+    
+    opacity: 1;
+  }
+}
+
+
+// Primary Navigation
+// --------------------------------------------------------------------------
+
+.primary-navigation{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: $l;
+}
+
+// Secondary Navigation
+// --------------------------------------------------------------------------
+
+.secondary-navigation{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+// Search Navigation
+// --------------------------------------------------------------------------
+
+.nav{
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: $radius-s;
+  gap: $xxs;
+
+  &:hover{
+    opacity: 1;
+  }
+  
+  &-item{
+    $self: &;
+    display: flex;
+    align-items: center;
+    border-bottom: solid $border-stroke-weight $lightest;
+    background-color: $lighter;
+
+    &__icon{
+      display: flex;
+      width: $xxxl;
+      height: $xxxl;
+      align-items: center;
+      justify-content: center;
+      background-color: $darken;
+      background-position: $xxxl center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__text{
+      padding-right: $s;
+      padding-left: $s;
+    }
+
+    &:hover{
+      border-bottom-color: $accent;
+
+      #{ $self }__icon{
+        background-position: center center;
+        color: transparent;
+      }
+    }
+  }
+}
+
+// Options
+// --------------------------------------------------------------------------
+
+.options{
+  display: flex;
+  flex-direction: row;
+  margin-left: $xs;
+  background-color: transparent;
+
+  &__trigger{
+    padding: 0;
+
+    margin: 0;
+    
+    $this: &;
+
+    &[data-state=active]::after{
+      transform: rotate(270deg);
+    }
+    &::after {
+      color: $accent;
+      content: "more_vert";
+      font-family: MaterialIcons;
+      font-size: 1.89rem;
+      transition: transform $tr-fast;
+    }
+    &:hover::after{
+      transform: rotate(90deg);
+    }
+  }
+
+  .switcher{
+    display: flex;
+    flex-direction: row;
+    transition: padding $tr-slow;
+
+    &[data-state=inactive]{
+      display: none;
+      padding-right: 0;
+      padding-left: 0;
+      background-color: transparent;
+    }
+
+    &[data-state=active]{
+      padding-right: $l;
+      padding-left: $l;
+    }
+
+    .lang-selector{
+      flex: 0 1 auto;
+
+      &__item {
+        display: inline;
+        cursor: pointer;
+        opacity: $op-medium;
+
+        &--is-active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: $s $xs;
+      margin-right: $xs;
+      margin-right: 0;
+    }
+
+    .switcher-item + .switcher-item {
+      padding-left: $xs;
+      border-left: solid $border-stroke-weight $accent;
+    }
+  }
+}

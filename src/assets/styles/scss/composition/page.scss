@@ -1,0 +1,12 @@
+#page {
+  display: flex;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  
+  &.is-fading {
+    margin-left: 100vw;
+    opacity: 0;
+  }
+}

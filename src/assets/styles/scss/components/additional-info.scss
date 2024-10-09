@@ -1,0 +1,169 @@
+/* Switchable Content Handle
+---------------------------------------------------------------------------- */
+
+.switchable-content-handle {
+  display: inline-block;
+  margin-left: $quad;
+  color: $accent-dark;
+  font-weight: $fw-bold;
+  opacity: $op-medium;
+  transition: background-color $tr-fast;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Preview Text
+---------------------------------------------------------------------------- */
+
+.preview-text {
+  height: auto;
+  opacity: 1;
+  transition: opacity $tr-fast;
+}
+
+/* Full Text
+---------------------------------------------------------------------------- */
+
+.full-text {
+  height: auto;
+  padding-bottom: $xl;
+  opacity: 1;
+  transition: opacity $tr-medium, padding $tr-medium $tr-fast;
+
+  &.is-cut {
+    padding: 0;
+  }
+}
+
+/* Is Foldable Text
+---------------------------------------------------------------------------- */
+
+.is-foldable-text {
+  position: relative;
+  color: $darken-strong;
+  font-weight: $fw-light;
+  transition: opacity $tr-fast;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before {
+    display: inline-block;
+    padding: 0 $quad;
+    color: $accent-dark;
+    content: "expand_more";
+    font-family: $font-icons;
+    font-size: $m;
+    font-weight: $fw-bold;
+    transition: transform $tr-fast, background-color $tr-fast;
+    vertical-align: bottom;
+  }
+
+  &.is-expanded {
+    &::before {
+      background-color: transparent;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* Has Additional Content
+---------------------------------------------------------------------------- */
+
+.has-additional-content {
+  position: relative;
+  overflow: hidden;
+
+  $self: &;
+
+  & > .preview-text {
+    opacity: 1;
+    transition: opacity $tr-fast;
+  }
+
+  &[data-additional-content-state="is-visible"] {
+    & > .preview-text {
+      opacity: $op-low;
+    }
+    #{$self}-handler {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    #{$self}-handler {
+      &::after {
+        
+        background-color: $darken;
+        opacity: 1;
+      }
+    }
+  }
+
+  &-handler {
+
+    display: flex;
+
+    &::after {
+      display: inline-block;
+      height: $xl;
+      padding-right: $quad;
+      padding-left: $quad;
+      margin-left: $quad;
+      color: $accent-dark;
+      content: "expand_more";
+      font-family: $font-icons;
+      hyphens: none;
+      transform-origin: center;
+      transition: all $tr-fast;
+      vertical-align: bottom;
+    }
+  }
+}
+
+/* Additional Content
+---------------------------------------------------------------------------- */
+.additional-content {
+  transition: padding $tr-fast;
+
+  &__title {
+    margin-top: 0;
+    font-size: $m;
+    font-weight: $fw-semibold;
+
+    &::after {
+      display: inline-block;
+      padding-right: $quad;
+      padding-left: $quad;
+      color: $accent-dark;
+      content: "expand_less";
+      font-family: $font-icons;
+      hyphens: none;
+      transform-origin: center;
+      transition: all $tr-fast;
+      vertical-align: bottom;
+    }
+
+    & + .inner-title{
+      margin-top: $xxxl;
+    }
+  }
+
+  &:not(.is-cut) {
+    padding-top: $xxxl;
+    padding-bottom: $xl;
+    border-bottom: solid $border-stroke-weight-s $darken-medium;
+    margin-bottom: $xl;
+  }
+
+  &__table{
+    margin-bottom: 0;
+  }
+}

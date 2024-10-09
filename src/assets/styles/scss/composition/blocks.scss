@@ -1,0 +1,129 @@
+/* According to CUBE
+    https://cube.fyi/composition.html#why-macro-level-thinking
+############################################################################ */
+
+// Info Block
+// --------------------------------------------------------------------------
+
+.info-block {
+  &__title {
+    margin-top: 0;
+    font-size: $m;
+    font-weight: $fw-semibold;
+  }
+}
+
+// Text Block
+// --------------------------------------------------------------------------
+
+.text-block {
+  max-width: $column-large;
+  padding-bottom: calc(1.5 * var(--responsive-padding-bottom-inner));
+}
+
+// Foldable Block
+// --------------------------------------------------------------------------
+
+.foldable-block {
+  position: relative;
+  z-index: $level-content;
+  background-color: $lightest;
+
+  &.has-separator {
+    padding-top: $s;
+    border-top: solid $border-stroke-weight-s $darken-medium;
+  }
+
+  &.has-strong-separator {
+    padding-top: $s;
+    border-top: solid $border-stroke-weight-s $darken-medium;
+  }
+
+  &__headline {
+    padding-bottom: $m;
+    margin: 0;
+    font-size: $l;
+    font-weight: $fw-light;
+  }
+
+  .is-expand-trigger {
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      background-color: $darken-medium;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      width: $xl;
+      height: $xl;
+      align-items: center;
+      justify-content: center;
+      padding: $xxs $xxs * 0.9;
+      background-color: $darken;
+      color: $darken-strong;
+      content: "expand_more";
+      font-family: $font-icons;
+      font-size: $m;
+      font-weight: $fw-bold;
+      transition: transform $tr-fast, background-color $tr-fast;
+    }
+
+    &.is-expanded {
+      &::after {
+        background-color: transparent;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .expandable-content {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity $tr-fast;
+
+    &.is-visible {
+      height: auto;
+      padding-bottom: $xl;
+      opacity: 1;
+    }
+  }
+}
+
+// Block
+// --------------------------------------------------------------------------
+
+.block {
+  padding-bottom: $xs;
+
+  & + & {
+    padding-top: $s;
+    
+  }
+
+  &.has-padding {
+    padding-bottom: $m;
+  }
+}
+
+/* Artfact Header
+---------------------------------------------------------------------------- */
+
+.artefact-header {
+  margin-bottom: $m;
+}
+
+/* Copy Text
+---------------------------------------------------------------------------- */
+
+.copytext {
+  margin-bottom: $xxxl;
+}

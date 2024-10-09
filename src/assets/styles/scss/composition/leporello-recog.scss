@@ -1,0 +1,53 @@
+.leporello-recog {
+  padding:
+    0
+    var(--responsive-padding-right-left)
+    var(--responsive-padding-bottom)
+    var(--responsive-padding-right-left);
+  background-color: $lightest;
+
+  @media only screen and (min-width: $vp-medium) {
+    display: grid;
+    gap: var(--responsive-gap);
+    grid-template-columns: max($tile-xs) 1fr;
+  }
+
+  // Image
+  // --------------------------------------------------------------------------
+
+  &__image {
+    padding: 0;
+    margin: 0;
+    margin-bottom: $l;
+
+    & > img {
+      width: 100%;
+      height: fit-content;
+    }
+  }
+
+
+    
+  // Grid Wrapper
+  // --------------------------------------------------------------------------
+  .grid-wrapper {
+    .main-column {
+      max-width: $column-large;
+    }
+
+    .marginal-content {
+      max-width: $column-large;
+    }
+
+    @media only screen and (min-width: $vp-xlarge) {
+      display: grid;
+      gap: var(--responsive-gap);
+      grid-template-columns: 1fr $column-medium;
+    }
+
+    @media only screen and (min-width: $vp-xxlarge) {
+      display: grid;
+      grid-template-columns: 1fr $column-large;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.link-to-item-wrap{
+  display: flex;
+  justify-content: right;
+  padding: $half $half $s 0;
+}
+
+.link-to-item{
+  border-bottom: solid $border-stroke-weight-s $accent;
+
+  &:hover{
+    padding: $quad $s;
+    background-color: $accent;
+  }
+}

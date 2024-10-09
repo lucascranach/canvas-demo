@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: $quad $half;
+  border: none;
+  border-bottom: solid $border-stroke-weight transparent;
+  margin: $quad 0;
+  border-radius: $radius-s;
+  font-weight: $fw-light;
+
+  $self: &;
+
+  &--is-transparent {
+    background-color: transparent;
+  }
+
+  &__icon {
+    display: flex;
+    margin-right: $xs;
+    color: $darker;
+
+    &--is-large{
+      font-size: $xxl;
+    }
+  }
+
+  &__text{
+    &--is-important{
+      font-weight: $fw-semibold;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    #{ $self }__icon{
+      transform: rotate(180deg);
+      transform-origin: center center;
+    }
+  }
+
+}

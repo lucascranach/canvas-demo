@@ -1,0 +1,28 @@
+// Section Headline
+// --------------------------------------------------------------------------
+
+.section-headline {
+  padding:
+    0
+    var(--responsive-padding-right-left)
+    var(--responsive-padding-bottom)
+    var(--responsive-padding-right-left);
+  background-color: $lightest;
+
+  @media only screen and (min-width: $vp-xlarge) {
+    display: grid;
+    gap: var(--responsive-gap);
+    grid-template-columns: 1fr $column-medium;
+  }
+
+  @media only screen and (min-width: $vp-xxlarge) {
+    grid-template-columns: 1fr $column-large;
+  }
+
+  & > h2 {
+    margin: 0;
+    color: $dark;
+    font-size: $xl;
+    font-weight: $fw-light;
+  }
+}

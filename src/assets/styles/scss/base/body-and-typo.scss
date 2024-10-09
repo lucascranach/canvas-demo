@@ -1,0 +1,123 @@
+* {
+  box-sizing: content-box;
+  transition: all $tr-fast;
+}
+
+body {
+  background-color: $lightest;
+  color: $darkest;
+  font-family: $font-sans-serif;
+  font-size: $m;
+  font-weight: $fw-light;
+}
+
+a {
+  color: $darkest;
+  text-decoration: none;
+
+  &.link{
+    border-bottom: solid $border-stroke-weight-s $accent;
+    transition: all $tr-fast;
+
+    &:hover{
+      display: inline-block;
+      padding-right: $quad;
+      padding-left: $quad;
+      background-color: $accent;
+    }
+  }
+}
+
+a[target=_blank] {
+  display: inline-block;
+  border-bottom: dotted $border-stroke-weight-s $accent;
+  transition: background $tr-fast, padding $tr-fast;
+
+  &::after {
+    @include external-link;
+  }
+
+  &:hover {
+    padding-right: $quad;
+    padding-left: $quad;
+    background-color: $accent;
+  }
+}
+
+
+
+/* Title & Subtitle
+---------------------------------------------------------------------------- */
+
+.title,
+.subtitle,
+.chapter {
+  position: relative;
+  margin-bottom: $l;
+  font-size: $l;
+  line-height: $lh-headlines;
+}
+
+.subtitle,
+.chapter {
+  margin-top: 0;
+  font-weight: $fw-regular;
+}
+
+.title {
+  font-size: $xl;
+  font-weight: $fw-semibold;
+}
+
+.inner-title {
+  margin-top: $xxl;
+  margin-bottom: $half;
+  font-weight: $fw-regular;
+}
+
+/* Special for archivals, because the titles are very very long! */
+.title-as-text{
+  max-width: $column-large;
+  font-size: $l;
+  font-weight: $fw-regular;
+  line-height: $lh-normal;
+}
+
+/* Text
+---------------------------------------------------------------------------- */
+
+p,
+th,
+td,
+dt,
+dd {
+  hyphens: auto;
+  line-height: $lh-normal;
+}
+
+/* Headline
+---------------------------------------------------------------------------- */
+
+h2 {
+  margin-top: 0;
+  font-size: $l;
+  font-weight: $fw-regular;
+}
+
+h3 {
+  font-size: $m;
+  font-weight: $fw-bold;
+}
+
+/* Remarks
+---------------------------------------------------------------------------- */
+
+.remark {
+  color: $darken-strong;
+}
+
+/* Source
+---------------------------------------------------------------------------- */
+a.link-to-source{
+  color: inherit;
+}

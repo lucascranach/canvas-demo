@@ -1,0 +1,252 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  &>.head {
+    position: sticky;
+    top: 0;
+    background-color: $lightest;
+
+    &.with-gray-background {
+      background-color: $lighter;
+    }
+
+    &>.row {
+      &>.cell {
+        width: 50%;
+        padding: $xxs;
+        font-weight: $fw-regular;
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+  }
+
+  &>.body {
+    &>.row {
+      &>.cell {
+        padding: $xxs;
+        background-color: $lightest;
+        text-align: left;
+        vertical-align: top;
+
+        &.-center {
+          text-align: center;
+        }
+
+        &.has-interaction {
+          a {
+            border-bottom: solid $border-stroke-weight-s $accent;
+          }
+        }
+
+      }
+
+      th.cell {
+        font-weight: $fw-regular;
+      }
+    }
+
+    &>.has-bg {
+      &>.cell {
+        background-color: $lighter;
+      }
+    }
+
+    &>.is-detail {
+      display: none;
+    }
+
+    &>.is-detail.is-visible {
+      display: table-row;
+    }
+
+    &>.is-active {
+      &>.cell {
+        padding-top: $l;
+        padding-right: $s;
+        padding-left: $s;
+        border-top: solid $border-stroke-weight $light;
+        font-weight: $fw-semibold;
+      }
+    }
+  }
+
+  &.is-striped {
+    .row {
+      .cell {
+        padding: $xs $m $s $m;
+      }
+
+      &:nth-child(odd)>* {
+        background-color: $darken;
+      }
+    }
+  }
+}
+
+// literature-item-details-table
+// ----------------------------------------------------------------------------
+
+.literature-item-details-table {
+  width: 100%;
+  margin-bottom: $s;
+  table-layout: fixed;
+
+  th {
+    width: 40%;
+    padding: $quad;
+    font-weight: $fw-regular;
+    text-align: right;
+    vertical-align: top;
+
+    &::after {
+      display: inline-block;
+      content: ":";
+    }
+  }
+
+  td {
+    padding: $quad;
+    vertical-align: top;
+  }
+
+  tr+tr {
+
+    th,
+    td {
+      border-top: solid $border-stroke-weight-s $darken;
+    }
+  }
+}
+
+// info table
+// ----------------------------------------------------------------------------
+
+.info-table {
+  position: relative;
+  width: 100%;
+  max-width: $column-large;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin-bottom: $l;
+  border-image-width: 0 !important;
+  border-spacing: 0;
+
+  $self: &;
+
+  &__title {
+    width: $term-width;
+    font-weight: $fw-regular;
+  }
+
+  &__title,
+  &__data,
+  &__remark {
+    padding: $xs 0 $s 0;
+    vertical-align: top;
+  }
+
+  &__data {
+    width: $term-width;
+    padding-right: $half;
+
+    &.is-wide {
+      width: $term-width-large;
+    }
+  }
+
+  &__remark {
+    width: auto;
+    padding-left: $half;
+    color: $darken-strong;
+  }
+
+  td {
+    border-top: solid $border-stroke-weight-s $darken-medium;
+  }
+
+  &.is-two-third {
+    #{$self}__title {
+      width: 33%;
+      padding-left: $s;
+    }
+  }
+
+  &.is-tight {
+
+    #{$self}__data,
+    #{$self}__title,
+    #{$self}__remark {
+      padding: $xxs 0 $xxs 0;
+    }
+  }
+}
+
+// Literature table
+// ----------------------------------------------------------------------------
+
+.literature-table {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin-bottom: $l;
+  border-image-width: 0 !important;
+  border-spacing: 0;
+
+  $self: &;
+
+  td {
+    border-top: solid $border-stroke-weight-s $darken-medium;
+
+    &+td {
+      padding-left: $m;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: $lighten;
+  }
+
+  th {
+    text-align: left;
+
+    &+th {
+      padding-left: $m;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.dir-u:after,
+    &.dir-d:after {
+      display: inline-block;
+      padding: 0 $half;
+      color: $accent-dark;
+      content: "filter_list";
+      font-family: $font-icons;
+      font-size: $m;
+      font-weight: $fw-bold;
+      transition: transform $tr-fast, background-color $tr-fast;
+      vertical-align: bottom;
+    }
+
+    &.dir-d:after {
+      transform: rotate(180deg);
+    }
+  }
+
+}
+
+
+// Table wrap
+// ----------------------------------------------------------------------------
+
+.responsive-table-wrap{
+  width: 100%;
+  overflow-x: auto;
+}

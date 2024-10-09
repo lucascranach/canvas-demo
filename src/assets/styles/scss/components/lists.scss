@@ -1,0 +1,103 @@
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0;
+    margin-bottom: $xs;
+    line-height: $lh-normal;
+    list-style-type: none;
+  }
+
+  &.simple {
+    li {
+      margin-left: $m;
+      list-style-type: square;
+    }
+  }
+}
+
+// Definition List
+//-----------------------------------------------------------------------------
+
+.definition-list {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0;
+  font-weight: $fw-light;
+
+  $self: &;
+
+  &.is-grid {
+    display: grid;
+    grid-template-columns: $term-width 1fr;
+  }
+
+  &:not(.is-grid):not(.is-stacked) {
+    margin-bottom: $xs;
+
+    #{$self}__term {
+      clear: left;
+      float: left;
+    }
+  }
+
+  &__term {
+    padding-right: $quad;
+    padding-right: $s;
+    font-weight: $fw-regular;
+    hyphens: none;
+    line-height: $lh-normal;
+  }
+
+  &__definition {
+    padding-bottom: $half;
+    margin: 0;
+    line-height: $lh-normal;
+
+    &:last-child {
+      // border-bottom: none;
+    }
+
+    &.is-block {
+      display: block;
+      margin-bottom: $half;
+    }
+
+    & > .literature-table {
+      margin-top: -$xs;
+    }
+  }
+
+  &__term,
+  &__definition {
+    padding-top: $xxs;
+    padding-bottom: $xs;
+    border-top: solid $border-stroke-weight-s $darken;
+  }
+
+  $this: &;
+  
+  &.is-loose{
+    #{$this}__term,
+    #{$this}__definition {
+      padding-top: $xs;
+    }
+  }
+
+  &.is-stacked {
+    #{$self}__definition + #{$self}__term {
+      margin-top: $m;
+    }
+  }
+}
+
+// Artefact List
+//-----------------------------------------------------------------------------
+
+.artefact-list{
+  &__content{
+    display: grid;
+    grid-template-columns: auto;
+  }
+}

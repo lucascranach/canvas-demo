@@ -1,0 +1,18 @@
+// Reprints Block
+// --------------------------------------------------------------------------
+
+.reprints-block{
+  padding-bottom: var(--responsive-padding-bottom);
+  @media only screen and (min-width: $vp-medium) {
+    display: grid;
+    gap: var(--responsive-gap);
+    grid-template-columns: max($tile-xs) 1fr;
+  }
+}
+
+// Reprints State
+// --------------------------------------------------------------------------
+.reprints-state{
+  margin-top: 0;
+  font-weight: $fw-regular;
+}

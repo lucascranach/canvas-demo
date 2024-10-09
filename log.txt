@@ -1,0 +1,349 @@
+
+> cranach-artefacts@1.0.0 dev
+> npm-run-all del:docs build:css --parallel watch serve:11ty
+
+
+> cranach-artefacts@1.0.0 del:docs
+> rimraf ./docs
+
+
+> cranach-artefacts@1.0.0 build:css
+> sass --load-path src/assets/styles/scss src/assets/styles/scss/main.scss src/compiled-assets/main.css --style=compressed
+
+
+> cranach-artefacts@1.0.0 serve:11ty
+> npx cross-env ELEVENTY_ENV=development npx eleventy --serve --watch --port=8080
+
+
+> cranach-artefacts@1.0.0 watch
+> npm-run-all --parallel dev:css watch:*
+
+
+> cranach-artefacts@1.0.0 watch:sass
+> sass --update --watch src/assets/styles/scss/main.scss:src/compiled-assets/main.css
+
+
+> cranach-artefacts@1.0.0 dev:css
+> sass src/assets/styles/scss/main.scss:src/compiled-assets/main.css
+
+Sass is watching for changes. Press Ctrl-C to stop.
+
+[
+  {
+    id: 'statens-museum-for-kunst-denmark',
+    title: 'Statens Museum for Kunst (Denmark)',
+    firstName: 'Statens Museum for Kunst',
+    lastName: '(Denmark)',
+    metadata: { langCode: 'de', title: 'Statens Museum for Kunst (Denmark)' }
+  },
+  {
+    id: 'marion-ackermann',
+    title: 'Marion Ackermann',
+    firstName: 'Marion',
+    lastName: 'Ackermann',
+    metadata: { langCode: 'de', title: 'Marion Ackermann' }
+  },
+  {
+    id: 'bernard-aikema',
+    title: 'Bernard Aikema',
+    firstName: 'Bernard',
+    lastName: 'Aikema',
+    metadata: { langCode: 'de', title: 'Bernard Aikema' }
+  },
+  {
+    id: 'rudolf-ameseder',
+    title: 'Rudolf  Ameseder',
+    firstName: 'Rudolf ',
+    lastName: 'Ameseder',
+    metadata: { langCode: 'de', title: 'Rudolf  Ameseder' }
+  },
+  {
+    id: 'christiane-d-anderson',
+    title: 'Christiane D. Anderson',
+    firstName: 'Christiane D.',
+    lastName: 'Anderson',
+    metadata: { langCode: 'de', title: 'Christiane D. Anderson' }
+  },
+  {
+    id: 'heinrich-ankert',
+    title: 'Heinrich Ankert',
+    firstName: 'Heinrich',
+    lastName: 'Ankert',
+    metadata: { langCode: 'de', title: 'Heinrich Ankert' }
+  },
+  {
+    id: 'fedja-anzelewsky',
+    title: 'Fedja Anzelewsky',
+    firstName: 'Fedja',
+    lastName: 'Anzelewsky',
+    metadata: { langCode: 'de', title: 'Fedja Anzelewsky' }
+  },
+  {
+    id: 'marina-arnold',
+    title: 'Marina Arnold',
+    firstName: 'Marina',
+    lastName: 'Arnold',
+    metadata: { langCode: 'de', title: 'Marina Arnold' }
+  },
+  {
+    id: 'erna-auerbach',
+    title: 'Erna Auerbach',
+    firstName: 'Erna',
+    lastName: 'Auerbach',
+    metadata: { langCode: 'de', title: 'Erna Auerbach' }
+  },
+  {
+    id: 'joseph-baader',
+    title: 'Joseph Baader',
+    firstName: 'Joseph',
+    lastName: 'Baader',
+    metadata: { langCode: 'de', title: 'Joseph Baader' }
+  },
+  {
+    id: 'ingo-bach',
+    title: 'Ingo Bach',
+    firstName: 'Ingo',
+    lastName: 'Bach',
+    metadata: { langCode: 'de', title: 'Ingo Bach' }
+  },
+  {
+    id: 'r-h-bainton',
+    title: 'R. H. Bainton',
+    firstName: 'R. H.',
+    lastName: 'Bainton',
+    metadata: { langCode: 'de', title: 'R. H. Bainton' }
+  },
+  {
+    id: 'ludwig-von-baldass',
+    title: 'Ludwig von Baldass',
+    firstName: 'Ludwig von',
+    lastName: 'Baldass',
+    metadata: { langCode: 'de', title: 'Ludwig von Baldass' }
+  },
+  {
+    id: 's-barazetti',
+    title: 'S. Barazetti',
+    firstName: 'S.',
+    lastName: 'Barazetti',
+    metadata: { langCode: 'de', title: 'S. Barazetti' }
+  },
+  {
+    id: 'karl-von-bardeleben',
+    title: 'Karl von Bardeleben',
+    firstName: 'Karl von',
+    lastName: 'Bardeleben',
+    metadata: { langCode: 'de', title: 'Karl von Bardeleben' }
+  },
+  {
+    id: 'horst-behrend',
+    title: 'Horst Behrend',
+    firstName: 'Horst',
+    lastName: 'Behrend',
+    metadata: { langCode: 'de', title: 'Horst Behrend' }
+  },
+  {
+    id: 'e-behrens',
+    title: 'E. Behrens',
+    firstName: 'E.',
+    lastName: 'Behrens',
+    metadata: { langCode: 'de', title: 'E. Behrens' }
+  },
+  {
+    id: 'otto-benesch',
+    title: 'Otto Benesch',
+    firstName: 'Otto',
+    lastName: 'Benesch',
+    metadata: { langCode: 'de', title: 'Otto Benesch' }
+  },
+  {
+    id: 'adolf-berger',
+    title: 'Adolf Berger',
+    firstName: 'Adolf',
+    lastName: 'Berger',
+    metadata: { langCode: 'de', title: 'Adolf Berger' }
+  },
+  {
+    id: 'marianne-bernhard',
+    title: 'Marianne Bernhard',
+    firstName: 'Marianne',
+    lastName: 'Bernhard',
+    metadata: { langCode: 'de', title: 'Marianne Bernhard' }
+  },
+  {
+    id: 'cacilia-bischoff',
+    title: 'Cäcilia Bischoff',
+    firstName: 'Cäcilia',
+    lastName: 'Bischoff',
+    metadata: { langCode: 'de', title: 'Cäcilia Bischoff' }
+  },
+  {
+    id: 'jutta-charlotte-von-bloh',
+    title: 'Jutta Charlotte von Bloh',
+    firstName: 'Jutta Charlotte von',
+    lastName: 'Bloh',
+    metadata: { langCode: 'de', title: 'Jutta Charlotte von Bloh' }
+  },
+  {
+    id: 'otto-heinrich-bockelberg',
+    title: 'Otto Heinrich Bockelberg',
+    firstName: 'Otto Heinrich',
+    lastName: 'Bockelberg',
+    metadata: { langCode: 'de', title: 'Otto Heinrich Bockelberg' }
+  },
+  {
+    id: 'albert-e-brinkmann',
+    title: 'Albert E. Brinkmann',
+    firstName: 'Albert E.',
+    lastName: 'Brinkmann',
+    metadata: { langCode: 'de', title: 'Albert E. Brinkmann' }
+  },
+  {
+    id: 'evamaria-brockhoff',
+    title: 'Evamaria Brockhoff',
+    firstName: 'Evamaria',
+    lastName: 'Brockhoff',
+    metadata: { langCode: 'de', title: 'Evamaria Brockhoff' }
+  },
+  {
+    id: 'jacqueline-brossollet',
+    title: 'Jacqueline Brossollet',
+    firstName: 'Jacqueline',
+    lastName: 'Brossollet',
+    metadata: { langCode: 'de', title: 'Jacqueline Brossollet' }
+  },
+  {
+    id: 'friedrich-bruns',
+    title: 'Friedrich Bruns',
+    firstName: 'Friedrich',
+    lastName: 'Bruns',
+    metadata: { langCode: 'de', title: 'Friedrich Bruns' }
+  },
+  {
+    id: 'ernst-buchner',
+    title: 'Ernst Buchner',
+    firstName: 'Ernst',
+    lastName: 'Buchner',
+    metadata: { langCode: 'de', title: 'Ernst Buchner' }
+  },
+  {
+    id: 'stephanie-buck',
+    title: 'Stephanie Buck',
+    firstName: 'Stephanie',
+    lastName: 'Buck',
+    metadata: { langCode: 'de', title: 'Stephanie Buck' }
+  },
+  {
+    id: 'ernst-buschbeck',
+    title: 'Ernst Buschbeck',
+    firstName: 'Ernst',
+    lastName: 'Buschbeck',
+    metadata: { langCode: 'de', title: 'Ernst Buschbeck' }
+  },
+  {
+    id: 'pantxika-beguerie',
+    title: 'Pantxika Béguerie',
+    firstName: 'Pantxika',
+    lastName: 'Béguerie',
+    metadata: { langCode: 'de', title: 'Pantxika Béguerie' }
+  },
+  {
+    id: 'julius-wilhelm-bohler',
+    title: 'Julius Wilhelm Böhler',
+    firstName: 'Julius Wilhelm',
+    lastName: 'Böhler',
+    metadata: { langCode: 'de', title: 'Julius Wilhelm Böhler' }
+  },
+  {
+    id: 'enno-bunz',
+    title: 'Enno Bünz',
+    firstName: 'Enno',
+    lastName: 'Bünz',
+    metadata: { langCode: 'de', title: 'Enno Bünz' }
+  },
+  {
+    id: 'paolo-cadorin',
+    title: 'Paolo Cadorin',
+    firstName: 'Paolo',
+    lastName: 'Cadorin',
+    metadata: { langCode: 'de', title: 'Paolo Cadorin' }
+  },
+  {
+    id: 'lorne-campbell',
+    title: 'Lorne Campbell',
+    firstName: 'Lorne',
+    lastName: 'Campbell',
+    metadata: { langCode: 'de', title: 'Lorne Campbell' }
+  },
+  {
+    id: 't-chaplin',
+    title: 'T. Chaplin',
+    firstName: 'T.',
+    lastName: 'Chaplin',
+    metadata: { langCode: 'de', title: 'T. Chaplin' }
+  },
+  {
+    id: 'galerie-charpentier',
+    title: 'Galerie Charpentier',
+    firstName: 'Galerie',
+    lastName: 'Charpentier',
+    metadata: { langCode: 'de', title: 'Galerie Charpentier' }
+  },
+  {
+    id: 'johann-friedrich-christ',
+    title: 'Johann Friedrich Christ',
+    firstName: 'Johann Friedrich',
+    lastName: 'Christ',
+    metadata: { langCode: 'de', title: 'Johann Friedrich Christ' }
+  },
+  {
+    id: 'ulrich-christoffel',
+    title: 'Ulrich Christoffel',
+    firstName: 'Ulrich',
+    lastName: 'Christoffel',
+    metadata: { langCode: 'de', title: 'Ulrich Christoffel' }
+  },
+  {
+    id: 'otto-clemen',
+    title: 'Otto Clemen',
+    firstName: 'Otto',
+    lastName: 'Clemen',
+    metadata: { langCode: 'de', title: 'Otto Clemen' }
+  },
+  {
+    id: 'kunstsammlungen-der-veste-coburg',
+    title: 'Kunstsammlungen der Veste Coburg',
+    firstName: 'Kunstsammlungen der Veste',
+    lastName: 'Coburg',
+    metadata: { langCode: 'de', title: 'Kunstsammlungen der Veste Coburg' }
+  },
+  {
+    id: 'h-comstock',
+    title: 'H Comstock',
+    firstName: 'H',
+    lastName: 'Comstock',
+    metadata: { langCode: 'de', title: 'H Comstock' }
+  },
+  {
+    id: 'william-george-constable',
+    title: 'William George Constable',
+    firstName: 'William George',
+    lastName: 'Constable',
+    metadata: { langCode: 'de', title: 'William George Constable' }
+  },
+  {
+    id: 'joao-couto',
+    title: 'João Couto',
+    firstName: 'João',
+    lastName: 'Couto',
+    metadata: { langCode: 'de', title: 'João Couto' }
+  },
+  {
+    id: 'lionel-cust',
+    title: 'Lionel Cust',
+    firstName: 'Lionel',
+    lastName: 'Cust',
+    metadata: { langCode: 'de', title: 'Lionel Cust' }
+  },
+  {
+    id: 'marius-daalmann',
+    title: 'Marius Daa

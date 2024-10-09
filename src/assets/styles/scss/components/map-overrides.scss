@@ -1,0 +1,81 @@
+/* Map
+############################################################################ */
+
+.map{
+  height: 100svh;
+  flex-grow: 2;
+}
+
+#map{
+  &.mapboxgl-map{
+    font-family: $font-sans-serif !important;
+    font-weight: $fw-regular;
+  }
+
+  /* Mapbox Popup
+############################################################################ */
+  .mapboxgl-popup{
+
+    &-close-button{
+      color: $accent;
+      font-size: $xxl;
+    }
+
+    &-content{
+      padding: 0;
+    }
+
+  }
+}
+
+
+
+/* Mapbox Popup Tips
+############################################################################ */
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: $darkest;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+  border-bottom-color: $darkest;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+  border-top-color: $darkest;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: $darkest;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: $darkest;
+}
+
+
+/* Map Card
+############################################################################ */
+
+.map-card{
+
+  &-content{
+    padding: $s $s $l $s;
+    box-shadow: $shadow-m;
+  }
+
+  &-desc{
+    margin: 0;
+    font-size: $m;
+    line-height: var(--lh-tight);
+  }
+
+  &-title{
+    margin-top: 0;
+    margin-bottom: $xs;
+    font-size: $m;
+  }
+}

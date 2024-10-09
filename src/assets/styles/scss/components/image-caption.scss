@@ -1,0 +1,86 @@
+// Image Description (Wrap)
+// --------------------------------------------------------------------------
+
+.image-caption-wrap {
+  padding-top: var(--responsive-padding-top-inner);
+  padding-left: var(--responsive-padding-right-left);
+
+  @media only screen and (min-width: $vp-xxlarge) {
+    display: grid;
+    gap: var(--responsive-gap);
+    grid-template-columns: $column-small 1fr;
+  }
+}
+
+// Image Description
+// --------------------------------------------------------------------------
+
+.image-caption {
+  display: block;
+  max-width: $column-medium;
+  padding-right: $m;
+
+  $self: &;
+
+  &-text {
+    display: block;
+    color: $dark;
+  }
+
+  &__title {
+    display: inline-block;
+    padding-right: $xxxl;
+    color: $darkest;
+    font-weight: $fw-semibold;
+    line-height: $lh-headlines;
+
+    $title: &;
+
+    &::after {
+      top: -$quad !important;
+      right: -$quad !important;
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $darken !important;
+      }
+    }
+  }
+
+  .definition-list {
+    margin-top: 0;
+    list-style: none;
+  }
+
+  .flat-text {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.is-secondary {
+    @media only screen and (max-width: $vp-xxlarge) {
+      @include small-separator;
+    }
+
+    .image-caption__title {
+      margin-top: 0;
+    }
+
+    .image-caption__title,
+    .definition-list__term {
+      color: $darkest;
+      font-weight: $fw-regular;
+    }
+
+    .image-caption__text {
+      margin-top: $quad;
+    }
+  }
+
+  .expandable-content {
+    padding-bottom: 0 !important;
+  }
+}

@@ -1,0 +1,51 @@
+.markdown-it {
+  a {
+    &::after {
+      @include external-link;
+    }
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  ol {
+    padding-left: 0;
+    margin-left: 0;
+    counter-reset: listCounter;
+    list-style: none;
+
+    li {
+      padding-bottom: $half;
+      padding-left: $l;
+      counter-increment: listCounter;
+
+      &::before {
+        margin-left: -$l;
+        content: counter(listCounter) ". ";
+      }
+
+      p {
+        display: inline;
+      }
+    }
+  }
+
+  ul {
+    li {
+      margin-left: $s;
+      list-style-type: square;
+    }
+
+    &.is-block {
+      li {
+        display: block;
+        margin-left: 0;
+      }
+    }
+  }
+}

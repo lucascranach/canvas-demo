@@ -1,0 +1,105 @@
+.artefact-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  flex-direction: column;
+  margin: 0;
+
+  $self: &;
+
+  &__image-holder{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: $darken-medium;
+
+    & img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &:hover{
+      background-color: $darken-strong;
+    }
+  }
+
+  &__content {
+    position: relative;
+    flex-grow: 1;
+    padding-top: $s;
+    padding-bottom: $s;
+    border-top: solid $border-stroke-weight-s transparent;
+    background-color: $lighter;
+    color: $darkest;
+    transition: border-color $tr-slow;
+  }
+
+  &__title {
+    margin-bottom: $xxs;
+    color: $light;
+    font-weight: $fw-semibold;
+    line-height: $lh-headlines;
+
+    em {
+      color: $lightest;
+      font-weight: $fw-semibold;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: $xxs;
+    color: $light;
+    font-weight: $fw-light;
+    line-height: $lh-headlines;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: $xxs;
+    color: $dark;
+    font-weight: $fw-light;
+    line-height: $lh-headlines;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: $xs;
+    right: $xs;
+    aspect-ratio: 1/1;
+    background-color: $darken-strongest;
+    border-radius: 50%;
+    color: $light;
+    transition: transform $tr-fast, color $tr-fast, opacity $tr-medium, top $tr-medium;
+
+    &:hover,
+    &--is-active {
+      background-color: $accent;
+      color: $darkest;
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    &--is-armed {
+      top: -100px;
+      opacity: 0;
+    }
+
+    &--is-active {
+      transform: scale(1);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+
+    #{$self}__favorite {
+      top: $xs !important;
+      opacity: 1 !important;
+    }
+
+    #{$self}__content {
+      border-color: $accent;
+    }
+  }
+}
